@@ -15,7 +15,7 @@ var corsOptions = {
   }
 }
 
-const port = process.env.PORT || 4000
+// const port = process.env.PORT || 4000
 
 //server.use()
 server.use(express.json())
@@ -25,6 +25,6 @@ server.get("/test", (req, res)=>{
     res.send("working!!!")
 })
 
-server.listen(port, () => {
+server.listen(4000, () => {
     console.log("I'm listening on port " + port)
 })
