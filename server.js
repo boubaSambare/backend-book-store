@@ -15,7 +15,8 @@ var corsOptions = {
   }
 }
 
-// const port = process.env.PORT || 4000
+// this allows HEROKU (or whatever else cloud system) to select the PORT that is free for him
+const port = process.env.PORT || 4000
 
 //server.use()
 server.use(express.json())
@@ -25,6 +26,6 @@ server.get("/test", (req, res)=>{
     res.send("working!!!")
 })
 
-server.listen(4000, () => {
-    console.log("I'm listening on port " + 4000)
+server.listen(port, () => {
+    console.log("I'm listening on port " + port)
 })
