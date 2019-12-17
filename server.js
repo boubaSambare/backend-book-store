@@ -26,5 +26,5 @@ server.get("/test", (req, res)=>{
 })
 
 server.listen(4000, () => {
-    console.log("I'm listening on port " + port)
+    console.log("I'm listening on port " + 4000)
 })
