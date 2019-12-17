@@ -1,6 +1,7 @@
 const express = require("express")
 const booksRouter = require("./src/books")
 const cors = require("cors")
+require('dotenv').config()
 
 const server = express();
 
