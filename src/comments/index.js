@@ -67,5 +67,15 @@ router.get("/:id/comments", async (req, res) => {
         res.status(200).send('comment created')
     })
 
+    router.delete("/comments/:id", async (req, res) => {
+        const comments = await getComments()
+        const findComment = comments.find(item => item.commentId === req.params.id)
+        if (!findComment)
+            return res.status(404).send('comment not found')
+        let newCommentsList = comments.filter(item => item.commentId !== req.params.id)
+        await writeFile(commentsPath, JSON.stringify(newCommentsList))
+        res.send('deleted')
+    })
+
 
 module.exports = router
